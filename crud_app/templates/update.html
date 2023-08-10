@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Data{% endblock %}
+
+{% block content %}
+<h1>Update Data</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="key">Key to update:</label>
+    <input type="text" id="key" name="key"><br>
+    <label for="value">New value:</label>
+    <input type="text" id="value" name="value"><br>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
