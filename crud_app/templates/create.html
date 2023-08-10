@@ -1,0 +1,24 @@
+<!-- crud_app/templates/crud_app/create.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Person</title>
+</head>
+<body>
+    <h1>Create Person</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <br>
+        <input type="submit" value="Create">
+    </form>
+    <p><a href="{% url 'index' %}">Back to List</a></p>
+</body>
+</html>

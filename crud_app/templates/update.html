@@ -1,0 +1,24 @@
+<!-- crud_app/templates/crud_app/update.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Person</title>
+</head>
+<body>
+    <h1>Update Person</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ person.name }}" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="{{ person.age }}" required>
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ person.city }}" required>
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <p><a href="{% url 'index' %}">Back to List</a></p>
+</body>
+</html>

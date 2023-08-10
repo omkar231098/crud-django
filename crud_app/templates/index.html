@@ -1,0 +1,20 @@
+<!-- crud_app/templates/crud_app/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>People</title>
+</head>
+<body>
+    <h1>People List</h1>
+    <ul>
+        {% for person in people %}
+        <li>
+            {{ person.name }} - {{ person.age }} - {{ person.city }}
+            <a href="{% url 'update' person.id %}">Update</a>
+            <a href="{% url 'delete' person.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'create' %}">Create New Person</a></p>
+</body>
+</html>
